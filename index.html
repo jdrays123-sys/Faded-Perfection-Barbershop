@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Faded Perfection Barbershop | Springfield, MO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+@property --pos{syntax:"<percentage>";inherits:false;initial-value:35%}
+:root{
+  --bg:#efece4;--fg:#111;--card:#fff;--muted:#5b574e;--line:rgba(17,17,17,.2);--lime:#c8ff2e;--black:#0c0c0c;--bone:#efece4;
+  color-scheme:light;box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c0c0c;--fg:#efece4;--card:#171717;--muted:#a39f94;--line:rgba(239,236,228,.22);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0c0c0c;--fg:#efece4;--card:#171717;--muted:#a39f94;--line:rgba(239,236,228,.22);color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);height:100%}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--fg);font-family:Outfit,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1.06rem;line-height:1.6;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--black);z-index:50}
+h1,h2,h3{font-family:Anton,Impact,"Arial Narrow Bold",sans-serif;font-weight:400;text-transform:uppercase;margin:0;line-height:.98;letter-spacing:.01em}
+p{margin:0 0 1em}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--black);color:var(--bone)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.mark{font-family:Anton,Impact,sans-serif;font-size:1.3rem;letter-spacing:.06em;text-decoration:none;text-transform:uppercase}
+.mark span{color:var(--lime)}
+nav{display:flex;align-items:center;gap:22px;font-size:.9rem;font-weight:500}
+nav a{text-decoration:none;opacity:.8}
+nav a:hover{opacity:1;color:var(--lime)}
+.call{background:var(--lime);color:#0c0c0c!important;opacity:1!important;font-weight:700;padding:8px 18px;border-radius:99px}
+.call:hover{filter:brightness(1.1);color:#0c0c0c!important}
+@media(max-width:640px){nav a:not(.call){display:none}}
+
+.hero{background:var(--black);color:var(--bone);padding:64px 0 0;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.035) 0 2px,transparent 2px 7px);pointer-events:none}
+.tag{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--lime);margin-bottom:20px}
+.tag::before{content:"";width:34px;height:2px;background:var(--lime)}
+h1{font-size:clamp(3.6rem,17vw,12.5rem);line-height:.86}
+h1 .f{display:block;background:linear-gradient(90deg,rgba(239,236,228,.08),rgba(239,236,228,.55) 45%,#efece4 85%);-webkit-background-clip:text;background-clip:text;color:transparent}
+h1 .p{display:block;color:var(--bone)}
+.lede{max-width:32em;color:#c7c3b8;font-size:1.15rem;margin:26px 0 28px;position:relative}
+.row{display:flex;flex-wrap:wrap;gap:12px;position:relative}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:15px 28px;border-radius:99px;background:var(--lime);color:#0c0c0c;transition:transform .15s}
+.btn:hover{transform:translateY(-3px)}
+.btn.o{background:transparent;color:var(--bone);border:2px solid rgba(239,236,228,.5);padding:13px 26px}
+.btn.o:hover{border-color:var(--lime);color:var(--lime)}
+.strip{margin-top:60px;background:var(--lime);color:#0c0c0c;overflow:hidden;white-space:nowrap;padding:12px 0;font-family:Anton,Impact,sans-serif;font-size:1.3rem;letter-spacing:.06em;text-transform:uppercase;transform:rotate(-1.2deg) scale(1.03);position:relative}
+.strip div{display:inline-block;animation:run 30s linear infinite}
+@keyframes run{to{transform:translateX(-50%)}}
+
+section{padding:80px 0}
+.k{font-size:.8rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:12px}
+h2{font-size:clamp(2.4rem,7vw,4.6rem);margin-bottom:34px}
+
+/* fade guide */
+.guide .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+@media(max-width:820px){.guide .wrap{grid-template-columns:1fr;gap:34px}}
+.picks{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
+.picks button{font:inherit;font-weight:700;cursor:pointer;padding:11px 22px;border-radius:99px;border:2px solid var(--fg);background:transparent;color:var(--fg);transition:.15s}
+.picks button:hover{transform:translateY(-2px)}
+.picks button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+#desc{color:var(--muted);min-height:4.8em;max-width:28em}
+.stage{display:flex;justify-content:center}
+.head{position:relative;width:230px;height:290px;border-radius:115px 115px 80px 80px/130px 130px 90px 90px;border:3px solid var(--fg);transition:--pos .5s ease;
+  background:linear-gradient(to top,#d9ad86 0,#d9ad86 calc(var(--pos) - 14%),#161616 calc(var(--pos) + 16%),#161616 100%)}
+.head::before{content:"";position:absolute;left:-26px;top:46%;width:34px;height:60px;border-radius:50%;background:#d9ad86;border:3px solid var(--fg);z-index:-1}
+.head::after{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:-52px;width:92px;height:52px;background:#d9ad86;border:3px solid var(--fg);border-top:0;border-radius:0 0 12px 12px;z-index:-1}
+.head i{position:absolute;right:-6px;left:-6px;height:0;border-top:2px dashed var(--lime);top:calc(100% - var(--pos));transition:top .5s ease}
+.head i::after{content:"fade line";position:absolute;right:6px;top:-24px;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--lime);color:#0c0c0c;padding:1px 8px;border-radius:99px}
+
+/* services */
+.sv{background:var(--black);color:var(--bone)}
+.sv .k{color:var(--lime)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid rgba(239,236,228,.22)}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
+.c{padding:34px 28px 34px 0;border-bottom:1px solid rgba(239,236,228,.22);display:grid;grid-template-columns:auto 1fr;gap:6px 20px;transition:padding .2s}
+.c:hover{padding-left:14px}
+.c .n{font-family:Anton,sans-serif;font-size:2.8rem;color:var(--lime);line-height:1;grid-row:span 2}
+.c h3{font-size:1.9rem}
+.c p{color:#c7c3b8;margin:0}
+.sv .note{margin-top:26px;color:#a39f94;font-size:.95rem}
+
+/* why */
+.why .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+@media(max-width:800px){.why .wrap{grid-template-columns:1fr}}
+.w{border-left:4px solid var(--lime);padding:2px 0 2px 20px}
+:root:not([data-theme="dark"]) .w{border-left-color:var(--fg)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .w{border-left-color:var(--lime)}}
+.w h3{font-size:1.7rem;margin-bottom:8px}
+.w p{color:var(--muted);margin:0}
+
+/* visit */
+.visit{padding-top:20px}
+.card{background:var(--card);border:2px solid var(--fg);border-radius:22px;padding:40px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;box-shadow:8px 8px 0 var(--fg)}
+@media(max-width:820px){.card{grid-template-columns:1fr;padding:28px;gap:26px}}
+address{font-style:normal;font-size:1.5rem;font-weight:700;line-height:1.35;margin-bottom:10px}
+.phone{font-family:Anton,sans-serif;font-size:2.4rem;letter-spacing:.03em;text-decoration:none;display:inline-block;margin-bottom:6px}
+.phone:hover{color:var(--muted)}
+.card p{color:var(--muted)}
+.card .btn{background:var(--fg);color:var(--bg)}
+.card .btn.o{background:transparent;color:var(--fg);border:2px solid var(--fg)}
+.ask{margin:0;padding:0;list-style:none}
+.ask li{padding:10px 0;border-bottom:1px dashed var(--line);display:flex;gap:12px}
+.ask li::before{content:"✓";color:var(--fg);font-weight:700;background:var(--lime);width:1.5em;height:1.5em;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.8rem;flex:none;margin-top:.15em;color:#0c0c0c}
+
+footer{background:var(--black);color:#a39f94;padding:34px 0 30px;font-size:.88rem;margin-top:60px}
+footer .big{font-family:Anton,Impact,sans-serif;text-transform:uppercase;font-size:clamp(2.2rem,11vw,7rem);line-height:.9;background:linear-gradient(90deg,#efece4,rgba(239,236,228,.05));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:16px;white-space:nowrap;overflow:hidden}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <a class="mark" href="#top">Faded <span>Perfection</span></a>
+  <nav><a href="#guide">Fade guide</a><a href="#services">Services</a><a href="#visit">Visit</a><a class="call" href="tel:+14173069454">Call (417) 306-9454</a></nav>
+</div></header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <span class="tag">Barbershop · Springfield, MO</span>
+    <h1><span class="f">Faded</span><span class="p">Perfection</span></h1>
+    <p class="lede">Clean fades, sharp lines and a fresh start. Sit down, tell your barber what you want, and walk out looking like the best version of yourself.</p>
+    <div class="row">
+      <a class="btn" href="tel:+14173069454">Call to book</a>
+      <a class="btn o" href="https://www.google.com/maps/search/?api=1&query=Faded+Perfection+Barbershop+1925+E+Bennett+St+Springfield+MO" target="_blank" rel="noopener">Get directions</a>
+    </div>
+  </div>
+  <div class="strip"><div>Fades · Tapers · Line-ups · Beard trims · Head shaves · Fresh cuts · Fades · Tapers · Line-ups · Beard trims · Head shaves · Fresh cuts · Fades · Tapers · Line-ups · Beard trims · Head shaves · Fresh cuts · Fades · Tapers · Line-ups · Beard trims · Head shaves · Fresh cuts · </div></div>
+</div>
+
+<section class="guide" id="guide"><div class="wrap">
+  <div>
+    <span class="k">Not sure what to ask for?</span>
+    <h2>Pick your fade</h2>
+    <div class="picks" id="picks">
+      <button aria-pressed="false" data-p="22" data-t="Low fade. The blend starts just above the ears and around the neckline. Subtle, professional and easy to grow out.">Low</button>
+      <button aria-pressed="true" data-p="38" data-t="Mid fade. The blend sits around the temples. It’s the most popular middle ground: clearly sharp, still versatile.">Mid</button>
+      <button aria-pressed="false" data-p="58" data-t="High fade. The blend starts high on the head for a bold, high-contrast look with a lot of attitude.">High</button>
+      <button aria-pressed="false" data-p="76" data-t="Skin / bald fade. The blend goes down to bare skin for the cleanest, sharpest finish you can get.">Skin</button>
+    </div>
+    <p id="desc">Mid fade. The blend sits around the temples. It’s the most popular middle ground: clearly sharp, still versatile.</p>
+    <p style="font-size:.9rem;color:var(--muted)">A quick visual guide. Your barber will shape it to your head and your style.</p>
+  </div>
+  <div class="stage" aria-hidden="true"><div class="head" id="head"><i></i></div></div>
+</div></section>
+
+<section class="sv" id="services"><div class="wrap">
+  <span class="k">What we do</span>
+  <h2>Services</h2>
+  <div class="grid">
+    <div class="c"><span class="n">01</span><h3>Men’s haircut</h3><p>Classic or modern, scissors or clippers, cut to suit you.</p></div>
+    <div class="c"><span class="n">02</span><h3>Fades &amp; tapers</h3><p>Low, mid, high or skin. Blended smooth and finished with a crisp line.</p></div>
+    <div class="c"><span class="n">03</span><h3>Beard trim</h3><p>Shaped, balanced and tidied so your beard looks intentional.</p></div>
+    <div class="c"><span class="n">04</span><h3>Head shave</h3><p>A smooth, clean shave from front to back.</p></div>
+  </div>
+  <p class="note">Services are based on public listings. Call the shop for the full menu and current prices.</p>
+</div></section>
+
+<section class="why"><div class="wrap">
+  <div class="w"><h3>Detail first</h3><p>Fades live and die by the blend, so we take the time to get every transition clean.</p></div>
+  <div class="w"><h3>Your style</h3><p>Bring a photo, bring an idea, or just say “surprise me, but make it sharp.”</p></div>
+  <div class="w"><h3>Fresh feeling</h3><p>Nothing beats the first look in the mirror after a proper cut.</p></div>
+</div></section>
+
+<section class="visit" id="visit"><div class="wrap">
+  <span class="k">Come through</span>
+  <h2>Find us</h2>
+  <div class="card">
+    <div>
+      <address>1925 E Bennett St<br>Springfield, MO 65804</address>
+      <a class="phone" href="tel:+14173069454">(417) 306-9454</a>
+      <p>Hours aren’t listed on this page. Call or check Google Maps for today’s hours before you head over.</p>
+      <div class="row">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Faded+Perfection+Barbershop+1925+E+Bennett+St+Springfield+MO" target="_blank" rel="noopener">Open in Maps</a>
+        <a class="btn o" href="tel:+14173069454">Call now</a>
+      </div>
+    </div>
+    <ul class="ask">
+      <li>Ask about today’s hours</li>
+      <li>Ask about walk-ins and booking</li>
+      <li>Ask about prices</li>
+      <li>Bring a photo of the look you want</li>
+    </ul>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="big">Faded Perfection</div>
+  Unofficial sample website. Details are from public listings and may be out of date.
+</div></footer>
+
+<script>
+(function(){
+  var b=document.querySelectorAll("#picks button"),h=document.getElementById("head"),d=document.getElementById("desc");
+  function set(el){
+    b.forEach(function(x){x.setAttribute("aria-pressed",x===el?"true":"false")});
+    h.style.setProperty("--pos",el.dataset.p+"%");
+    d.textContent=el.dataset.t;
+  }
+  b.forEach(function(x){x.addEventListener("click",function(){set(x)})});
+  h.style.setProperty("--pos","38%");
+})();
+</script>
+</body>
+</html>
